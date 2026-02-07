@@ -1,13 +1,20 @@
 {
   "common": {
     "appName": "Best Kebabs BCN",
-    "language": "Idioma"
+    "language": "Idioma",
+    "languages": {
+      "ca": "Català",
+      "es": "Español",
+      "en": "English"
+    }
   },
   "nav": {
     "home": "Inici",
     "login": "Inicia sessió",
     "logout": "Tanca sessió",
-    "register": "Registra't"
+    "register": "Registra't",
+    "profile": "Perfil",
+    "admin": "Admin"
   },
   "auth": {
     "username": "Nom d'usuari",
@@ -54,5 +61,51 @@
     "network": "Error de connexió",
     "unauthorized": "No autoritzat",
     "notFound": "No trobat"
+  },
+  "profile": {
+    "title": "El meu perfil",
+    "username": "Nom d'usuari",
+    "email": "Correu electrònic",
+    "changePassword": "Canviar contrasenya",
+    "currentPassword": "Contrasenya actual",
+    "newPassword": "Nova contrasenya",
+    "confirmPassword": "Confirma la contrasenya",
+    "saveChanges": "Desar canvis",
+    "updateSuccess": "Perfil actualitzat correctament",
+    "updateError": "Error en actualitzar el perfil",
+    "passwordMismatch": "Les contrasenyes no coincideixen"
+  },
+  "admin": {
+    "title": "Panell d'administració",
+    "tabs": {
+      "kebabs": "Kebabs",
+      "users": "Usuaris",
+      "ratings": "Valoracions"
+    },
+    "createKebab": "Crear kebab",
+    "editKebab": "Editar kebab",
+    "kebabName": "Nom del kebab",
+    "kebabAddress": "Adreça",
+    "latitude": "Latitud",
+    "longitude": "Longitud",
+    "tags": "Etiquetes (separades per comes)",
+    "create": "Crear",
+    "update": "Actualitzar",
+    "cancel": "Cancel·lar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirmDelete": "Estàs segur que vols eliminar això?",
+    "name": "Nom",
+    "address": "Adreça",
+    "rating": "Valoració",
+    "actions": "Accions",
+    "username": "Nom d'usuari",
+    "email": "Correu",
+    "role": "Rol",
+    "joined": "Registrat",
+    "user": "Usuari",
+    "kebab": "Kebab",
+    "score": "Puntuació",
+    "comment": "Comentari"
   }
 }

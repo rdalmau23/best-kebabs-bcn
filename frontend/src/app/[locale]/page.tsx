@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import KebabList from '@/components/KebabList';
 import KebabMap from '@/components/KebabMap';
-import Navbar from '@/components/Navbar';
 import type { Kebab } from '@/types';
 import kebabService from '@/lib/kebabService';
 
@@ -37,8 +36,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           {t('kebabs.title')}

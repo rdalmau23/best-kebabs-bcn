@@ -63,6 +63,35 @@ class RatingController {
       res.status(500).json({ message: 'Failed to retrieve ratings' });
     }
   }
+
+  /**
+   * Get all ratings (admin only)
+   * GET /api/ratings
+   */
+  async getAllRatings(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const ratings = await ratingService.getAllRatings();
+      res.status(200).json(ratings);
+    } catch (error: any) {
+      logger.error('Get all ratings failed', { error: error.message });
+      res.status(500).json({ message: 'Failed to retrieve ratings' });
+    }
+  }
+
+  /**
+   * Delete a rating (admin only)
+   * DELETE /api/ratings/:id
+   */
+  async deleteRating(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      await ratingService.deleteRating(id);
+      res.status(204).send();
+    } catch (error: any) {
+      logger.error('Delete rating failed', { error: error.message });
+      res.status(400).json({ message: error.message || 'Failed to delete rating' });
+    }
+  }
 }
 
 export default new RatingController();
