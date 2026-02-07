@@ -10,6 +10,16 @@ import type {
  * Authentication service for user login and registration
  */
 class AuthService {
+  constructor() {
+    // Set token in axios headers on initialization
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('token');
+      if (token) {
+        apiClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      }
+    }
+  }
+
   /**
    * Register a new user
    */
@@ -62,6 +72,8 @@ class AuthService {
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', token);
       apiClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      // Emit event to notify components about auth state change
+      window.dispatchEvent(new Event('auth-changed'));
     }
   }
 
@@ -82,6 +94,8 @@ class AuthService {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('token');
       delete apiClient.defaults.headers.common['Authorization'];
+      // Emit event to notify components about auth state change
+      window.dispatchEvent(new Event('auth-changed'));
     }
   }
 
@@ -94,3 +108,9 @@ class AuthService {
 }
 
 export default new AuthService();
+
+// Named exports for convenience
+export const register = (data: RegisterData) => new AuthService().register(data);
+export const login = (credentials: LoginCredentials) => new AuthService().login(credentials);
+export const logout = () => new AuthService().logout();
+export const getCurrentUser = () => new AuthService().getCurrentUser();

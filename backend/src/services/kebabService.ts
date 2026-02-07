@@ -71,6 +71,52 @@ class KebabService {
       throw error;
     }
   }
+
+  /**
+   * Update kebab (admin only)
+   */
+  async updateKebab(
+    kebabId: string,
+    data: {
+      name?: string;
+      address?: string;
+      lat?: number;
+      lng?: number;
+      tags?: string[];
+    }
+  ): Promise<IKebab | null> {
+    try {
+      const kebab = await Kebab.findByIdAndUpdate(kebabId, data, { new: true });
+      
+      if (!kebab) {
+        throw new Error('Kebab not found');
+      }
+
+      logger.info('Kebab updated successfully', { kebabId, name: data.name });
+      return kebab;
+    } catch (error) {
+      logger.error('Failed to update kebab', { error, kebabId });
+      throw error;
+    }
+  }
+
+  /**
+   * Delete kebab (admin only)
+   */
+  async deleteKebab(kebabId: string): Promise<void> {
+    try {
+      const kebab = await Kebab.findByIdAndDelete(kebabId);
+      
+      if (!kebab) {
+        throw new Error('Kebab not found');
+      }
+
+      logger.info('Kebab deleted successfully', { kebabId, name: kebab.name });
+    } catch (error) {
+      logger.error('Failed to delete kebab', { error, kebabId });
+      throw error;
+    }
+  }
 }
 
 export default new KebabService();

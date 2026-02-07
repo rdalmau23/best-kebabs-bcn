@@ -36,6 +36,28 @@ class KebabService {
     const response = await apiClient.post<Rating>('/ratings', data);
     return response.data;
   }
+
+  /**
+   * Create a kebab (admin only)
+   */
+  async createKebab(data: {
+    name: string;
+    address: string;
+    lat: number;
+    lng: number;
+    tags?: string[];
+  }): Promise<Kebab> {
+    const response = await apiClient.post<Kebab>('/kebabs', data);
+    return response.data;
+  }
 }
 
 export default new KebabService();
+
+// Named exports for convenience
+export const getKebabs = () => new KebabService().getKebabs();
+export const getKebabById = (id: string) => new KebabService().getKebabById(id);
+export const getRatings = (kebabId: string) => new KebabService().getRatings(kebabId);
+export const createRating = (data: CreateRatingData) => new KebabService().createRating(data);
+export const createKebab = (data: { name: string; address: string; lat: number; lng: number; tags?: string[] }) => 
+  new KebabService().createKebab(data);

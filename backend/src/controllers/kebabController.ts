@@ -70,6 +70,45 @@ class KebabController {
       res.status(400).json({ message: error.message || 'Failed to create kebab' });
     }
   }
+
+  /**
+   * Update a kebab (admin only)
+   * PUT /api/kebabs/:id
+   */
+  async updateKebab(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const { name, address, lat, lng, tags } = req.body;
+
+      const kebab = await kebabService.updateKebab(id, {
+        name,
+        address,
+        lat,
+        lng,
+        tags,
+      });
+
+      res.status(200).json(kebab);
+    } catch (error: any) {
+      logger.error('Update kebab failed', { error: error.message });
+      res.status(400).json({ message: error.message || 'Failed to update kebab' });
+    }
+  }
+
+  /**
+   * Delete a kebab (admin only)
+   * DELETE /api/kebabs/:id
+   */
+  async deleteKebab(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      await kebabService.deleteKebab(id);
+      res.status(204).send();
+    } catch (error: any) {
+      logger.error('Delete kebab failed', { error: error.message });
+      res.status(400).json({ message: error.message || 'Failed to delete kebab' });
+    }
+  }
 }
 
 export default new KebabController();

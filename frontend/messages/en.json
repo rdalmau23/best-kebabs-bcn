@@ -1,13 +1,21 @@
 {
   "common": {
     "appName": "Best Kebabs BCN",
-    "language": "Language"
+    "language": "Language",
+    "loading": "Loading...",
+    "languages": {
+      "ca": "Català",
+      "es": "Español",
+      "en": "English"
+    }
   },
   "nav": {
     "home": "Home",
     "login": "Log in",
     "logout": "Log out",
-    "register": "Sign up"
+    "register": "Sign up",
+    "profile": "Profile",
+    "admin": "Admin"
   },
   "auth": {
     "username": "Username",
@@ -54,5 +62,51 @@
     "network": "Connection error",
     "unauthorized": "Unauthorized",
     "notFound": "Not found"
+  },
+  "profile": {
+    "title": "My Profile",
+    "username": "Username",
+    "email": "Email",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "saveChanges": "Save Changes",
+    "updateSuccess": "Profile updated successfully",
+    "updateError": "Failed to update profile",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "tabs": {
+      "kebabs": "Kebabs",
+      "users": "Users",
+      "ratings": "Ratings"
+    },
+    "createKebab": "Create Kebab",
+    "editKebab": "Edit Kebab",
+    "kebabName": "Kebab Name",
+    "kebabAddress": "Address",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "tags": "Tags (comma separated)",
+    "create": "Create",
+    "update": "Update",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this?",
+    "name": "Name",
+    "address": "Address",
+    "rating": "Rating",
+    "actions": "Actions",
+    "username": "Username",
+    "email": "Email",
+    "role": "Role",
+    "joined": "Joined",
+    "user": "User",
+    "kebab": "Kebab",
+    "score": "Score",
+    "comment": "Comment"
   }
 }

@@ -17,4 +17,10 @@ router.get('/:id', kebabController.getKebabById);
 // POST /api/kebabs - Create kebab (admin only)
 router.post('/', authenticate, requireAdmin, kebabController.createKebab);
 
+// PUT /api/kebabs/:id - Update kebab (admin only)
+router.put('/:id', authenticate, requireAdmin, kebabController.updateKebab);
+
+// DELETE /api/kebabs/:id - Delete kebab (admin only)
+router.delete('/:id', authenticate, requireAdmin, kebabController.deleteKebab);
+
 export default router;

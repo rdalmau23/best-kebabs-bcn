@@ -91,6 +91,44 @@ class RatingService {
       throw error;
     }
   }
+
+  /**
+   * Delete a rating (admin only)
+   */
+  async deleteRating(ratingId: string): Promise<void> {
+    try {
+      const rating = await Rating.findByIdAndDelete(ratingId);
+
+      if (!rating) {
+        throw new Error('Rating not found');
+      }
+
+      // Recalculate kebab statistics after deletion
+      await this.recalculateKebabStats(rating.kebabId.toString());
+
+      logger.info('Rating deleted', { ratingId, kebabId: rating.kebabId });
+    } catch (error) {
+      logger.error('Failed to delete rating', { error, ratingId });
+      throw error;
+    }
+  }
+
+  /**
+   * Get all ratings (admin only)
+   */
+  async getAllRatings(): Promise<IRating[]> {
+    try {
+      const ratings = await Rating.find()
+        .populate('userId', 'username email')
+        .populate('kebabId', 'name address')
+        .sort({ createdAt: -1 })
+        .limit(100);
+      return ratings;
+    } catch (error) {
+      logger.error('Failed to retrieve all ratings', { error });
+      throw error;
+    }
+  }
 }
 
 export default new RatingService();
