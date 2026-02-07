@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: kebabs-mongodb-dev
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: best-kebabs-bcn-dev
+    volumes:
+      - mongodb_data_dev:/data/db
+    networks:
+      - kebabs-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: kebabs-backend-dev
+    ports:
+      - "5002:5000"
+    environment:
+      NODE_ENV: development
+      MONGODB_URI: mongodb://mongodb:27017/best-kebabs-bcn-dev
+      JWT_SECRET: dev-jwt-secret-change-this
+      PORT: 5000
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+    networks:
+      - kebabs-network
+    command: npm run dev
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: kebabs-frontend-dev
+    ports:
+      - "3001:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:5002
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - kebabs-network
+    command: npm run dev
+
+networks:
+  kebabs-network:
+    driver: bridge
+
+volumes:
+  mongodb_data_dev:
