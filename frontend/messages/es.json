@@ -1,0 +1,58 @@
+{
+  "common": {
+    "appName": "Best Kebabs BCN",
+    "language": "Idioma"
+  },
+  "nav": {
+    "home": "Inicio",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "register": "Registrarse"
+  },
+  "auth": {
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginTitle": "Iniciar sesión",
+    "registerTitle": "Registrarse",
+    "loginButton": "Entrar",
+    "registerButton": "Crear cuenta",
+    "alreadyHaveAccount": "¿Ya tienes cuenta?",
+    "dontHaveAccount": "¿No tienes cuenta?"
+  },
+  "kebabs": {
+    "title": "Los mejores kebabs de Barcelona",
+    "searchPlaceholder": "Busca un kebab...",
+    "noResults": "No se han encontrado kebabs",
+    "filters": "Filtros",
+    "allKebabs": "Todos los kebabs"
+  },
+  "kebabDetail": {
+    "address": "Dirección",
+    "averageRating": "Valoración media",
+    "ratingsCount": "valoraciones",
+    "noRatings": "Todavía no hay valoraciones",
+    "yourRating": "Tu valoración",
+    "rateButton": "Valora este kebab",
+    "updateRating": "Actualizar valoración",
+    "comment": "Comentario (opcional)",
+    "submit": "Enviar valoración",
+    "loginToRate": "Inicia sesión para valorar"
+  },
+  "tags": {
+    "halal": "Halal",
+    "24h": "24 horas",
+    "pollo": "Pollo",
+    "ternera": "Ternera"
+  },
+  "map": {
+    "title": "Mapa",
+    "loading": "Cargando mapa..."
+  },
+  "errors": {
+    "generic": "Se ha producido un error",
+    "network": "Error de conexión",
+    "unauthorized": "No autorizado",
+    "notFound": "No encontrado"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "common": {
+    "appName": "Best Kebabs BCN",
+    "language": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "login": "Log in",
+    "logout": "Log out",
+    "register": "Sign up"
+  },
+  "auth": {
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "loginTitle": "Log in",
+    "registerTitle": "Sign up",
+    "loginButton": "Log in",
+    "registerButton": "Create account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "kebabs": {
+    "title": "Best kebabs in Barcelona",
+    "searchPlaceholder": "Search for a kebab...",
+    "noResults": "No kebabs found",
+    "filters": "Filters",
+    "allKebabs": "All kebabs"
+  },
+  "kebabDetail": {
+    "address": "Address",
+    "averageRating": "Average rating",
+    "ratingsCount": "ratings",
+    "noRatings": "No ratings yet",
+    "yourRating": "Your rating",
+    "rateButton": "Rate this kebab",
+    "updateRating": "Update rating",
+    "comment": "Comment (optional)",
+    "submit": "Submit rating",
+    "loginToRate": "Log in to rate"
+  },
+  "tags": {
+    "halal": "Halal",
+    "24h": "24 hours",
+    "pollo": "Chicken",
+    "ternera": "Beef"
+  },
+  "map": {
+    "title": "Map",
+    "loading": "Loading map..."
+  },
+  "errors": {
+    "generic": "An error occurred",
+    "network": "Connection error",
+    "unauthorized": "Unauthorized",
+    "notFound": "Not found"
+  }
+}

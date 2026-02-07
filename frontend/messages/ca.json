@@ -1,0 +1,58 @@
+{
+  "common": {
+    "appName": "Best Kebabs BCN",
+    "language": "Idioma"
+  },
+  "nav": {
+    "home": "Inici",
+    "login": "Inicia sessió",
+    "logout": "Tanca sessió",
+    "register": "Registra't"
+  },
+  "auth": {
+    "username": "Nom d'usuari",
+    "email": "Correu electrònic",
+    "password": "Contrasenya",
+    "loginTitle": "Inicia sessió",
+    "registerTitle": "Registra't",
+    "loginButton": "Entrar",
+    "registerButton": "Crear compte",
+    "alreadyHaveAccount": "Ja tens compte?",
+    "dontHaveAccount": "No tens compte?"
+  },
+  "kebabs": {
+    "title": "Els millors kebabs de Barcelona",
+    "searchPlaceholder": "Cerca un kebab...",
+    "noResults": "No s'han trobat kebabs",
+    "filters": "Filtres",
+    "allKebabs": "Tots els kebabs"
+  },
+  "kebabDetail": {
+    "address": "Adreça",
+    "averageRating": "Valoració mitjana",
+    "ratingsCount": "valoracions",
+    "noRatings": "Encara no hi ha valoracions",
+    "yourRating": "La teva valoració",
+    "rateButton": "Valora aquest kebab",
+    "updateRating": "Actualitza valoració",
+    "comment": "Comentari (opcional)",
+    "submit": "Enviar valoració",
+    "loginToRate": "Inicia sessió per valorar"
+  },
+  "tags": {
+    "halal": "Halal",
+    "24h": "24 hores",
+    "pollo": "Pollastre",
+    "ternera": "Vedella"
+  },
+  "map": {
+    "title": "Mapa",
+    "loading": "Carregant mapa..."
+  },
+  "errors": {
+    "generic": "S'ha produït un error",
+    "network": "Error de connexió",
+    "unauthorized": "No autoritzat",
+    "notFound": "No trobat"
+  }
+}
